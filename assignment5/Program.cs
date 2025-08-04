@@ -127,35 +127,55 @@ namespace assignment5
 
 
             //#endregion
-            #region Q5. Function IsPrime
+            //    #region Q5. Function IsPrime
 
+            //    class Program
+            //{
+            //    static bool IsPrime(int number)
+            //    {
+            //        if (number <= 1) return false;
+            //        for (int i = 2; i <= Math.Sqrt(number); i++)
+            //        {
+            //            if (number % i == 0) return false;
+            //        }
+            //        return true;
+            //    }
+
+            //    static void Main()
+            //    {
+            //        Console.Write("Enter a number: ");
+            //        int num = int.Parse(Console.ReadLine());
+            //        Console.WriteLine(IsPrime(num) ? "Prime" : "Not Prime");
+            //    }
+            //}
+
+            //#endregion
+            #region Q6. Function MinMaxArray using Reference Parameters
             class Program
         {
-            static bool IsPrime(int number)
+            static void MinMaxArray(int[] arr, out int min, out int max)
             {
-                if (number <= 1) return false;
-                for (int i = 2; i <= Math.Sqrt(number); i++)
+                min = arr[0];
+                max = arr[0];
+                foreach (int num in arr)
                 {
-                    if (number % i == 0) return false;
+                    if (num < min) min = num;
+                    if (num > max) max = num;
                 }
-                return true;
             }
 
             static void Main()
             {
-                Console.Write("Enter a number: ");
-                int num = int.Parse(Console.ReadLine());
-                Console.WriteLine(IsPrime(num) ? "Prime" : "Not Prime");
+                int[] arr = { 3, 7, 2, 9, 1 };
+                MinMaxArray(arr, out int min, out int max);
+                Console.WriteLine($"Min = {min}, Max = {max}");
             }
         }
-
-        #endregion
-        #region Q6.
         #endregion
         #region Q7.
         #endregion
         #region Q8.
         #endregion
     }
-}
+    }
 }
