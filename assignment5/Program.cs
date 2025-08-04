@@ -172,26 +172,53 @@ namespace assignment5
             //    }
             //}
             //#endregion
-            #region Q7. Iterative Function to Calculate Factorial
+            //    #region Q7. Iterative Function to Calculate Factorial
+            //    class Program
+            //{
+            //    static long Factorial(int n)
+            //    {
+            //        long result = 1;
+            //        for (int i = 2; i <= n; i++)
+            //            result *= i;
+            //        return result;
+            //    }
+
+            //    static void Main()
+            //    {
+            //        Console.Write("Enter a number: ");
+            //        int num = int.Parse(Console.ReadLine());
+            //        Console.WriteLine($"Factorial of {num} is {Factorial(num)}");
+            //    }
+            //}
+            //#endregion
+            #region Q8.ChangeChar Function (Modify character at specific index in a string)
             class Program
         {
-            static long Factorial(int n)
+            static string ChangeChar(string input, int position, char newChar)
             {
-                long result = 1;
-                for (int i = 2; i <= n; i++)
-                    result *= i;
-                return result;
+                if (position < 0 || position >= input.Length)
+                    return input;
+
+                char[] chars = input.ToCharArray();
+                chars[position] = newChar;
+                return new string(chars);
             }
 
             static void Main()
             {
-                Console.Write("Enter a number: ");
-                int num = int.Parse(Console.ReadLine());
-                Console.WriteLine($"Factorial of {num} is {Factorial(num)}");
+                Console.Write("Enter a string: ");
+                string input = Console.ReadLine();
+
+                Console.Write("Enter position to change: ");
+                int pos = int.Parse(Console.ReadLine());
+
+                Console.Write("Enter new character: ");
+                char c = Console.ReadLine()[0];
+
+                string result = ChangeChar(input, pos, c);
+                Console.WriteLine("Modified string: " + result);
             }
         }
-        #endregion
-        #region Q8.
         #endregion
     }
     }
