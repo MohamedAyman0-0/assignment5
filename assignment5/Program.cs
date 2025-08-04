@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace assignment5
@@ -66,37 +67,65 @@ namespace assignment5
 
 
             //        #endregion
-            #region Q3.Function to Accept 4 Parameters and Return Sum and Subtraction
+            //    #region Q3.Function to Accept 4 Parameters and Return Sum and Subtraction
 
-            
 
-            class Program
+
+            //    class Program
+            //{
+            //    static void SumAndSubtract(int a, int b, out int sum, out int diff)
+            //    {
+            //        sum = a + b;
+            //        diff = a - b;
+            //    }
+
+            //    static void Main()
+            //    {
+            //        Console.Write("Enter first number: ");
+            //        int a = int.Parse(Console.ReadLine());
+
+            //        Console.Write("Enter second number: ");
+            //        int b = int.Parse(Console.ReadLine());
+
+            //        int sum, diff;
+            //        SumAndSubtract(a, b, out sum, out diff);
+
+            //        Console.WriteLine("Sum = " + sum);
+            //        Console.WriteLine("Difference = " + diff);
+            //    }
+            //}
+
+
+            //#endregion
+            #region Q4. Function to Sum Digits of a Number
+         class Program
         {
-            static void SumAndSubtract(int a, int b, out int sum, out int diff)
+            static int SumDigits(int number)
             {
-                sum = a + b;
-                diff = a - b;
+                int sum = 0;
+                while (number != 0)
+                {
+                    sum += number % 10;
+                    number /= 10;
+                }
+                return sum;
             }
 
             static void Main()
             {
-                Console.Write("Enter first number: ");
-                int a = int.Parse(Console.ReadLine());
+                Console.Write("Enter a number: ");
+                int num = int.Parse(Console.ReadLine());
 
-                Console.Write("Enter second number: ");
-                int b = int.Parse(Console.ReadLine());
-
-                int sum, diff;
-                SumAndSubtract(a, b, out sum, out diff);
-
-                Console.WriteLine("Sum = " + sum);
-                Console.WriteLine("Difference = " + diff);
+                Console.WriteLine($"The sum of the digits of the number {num} is: {SumDigits(num)}");
             }
-        }
+        
 
 
-        #endregion
-        #region Q4.
+
+
+
+
+
         #endregion
         #region Q5.
         #endregion
@@ -107,5 +136,5 @@ namespace assignment5
         #region Q8.
         #endregion
     }
-}
+    }
 }
