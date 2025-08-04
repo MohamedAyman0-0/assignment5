@@ -150,29 +150,46 @@ namespace assignment5
             //}
 
             //#endregion
-            #region Q6. Function MinMaxArray using Reference Parameters
+            //    #region Q6. Function MinMaxArray using Reference Parameters
+            //    class Program
+            //{
+            //    static void MinMaxArray(int[] arr, out int min, out int max)
+            //    {
+            //        min = arr[0];
+            //        max = arr[0];
+            //        foreach (int num in arr)
+            //        {
+            //            if (num < min) min = num;
+            //            if (num > max) max = num;
+            //        }
+            //    }
+
+            //    static void Main()
+            //    {
+            //        int[] arr = { 3, 7, 2, 9, 1 };
+            //        MinMaxArray(arr, out int min, out int max);
+            //        Console.WriteLine($"Min = {min}, Max = {max}");
+            //    }
+            //}
+            //#endregion
+            #region Q7. Iterative Function to Calculate Factorial
             class Program
         {
-            static void MinMaxArray(int[] arr, out int min, out int max)
+            static long Factorial(int n)
             {
-                min = arr[0];
-                max = arr[0];
-                foreach (int num in arr)
-                {
-                    if (num < min) min = num;
-                    if (num > max) max = num;
-                }
+                long result = 1;
+                for (int i = 2; i <= n; i++)
+                    result *= i;
+                return result;
             }
 
             static void Main()
             {
-                int[] arr = { 3, 7, 2, 9, 1 };
-                MinMaxArray(arr, out int min, out int max);
-                Console.WriteLine($"Min = {min}, Max = {max}");
+                Console.Write("Enter a number: ");
+                int num = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Factorial of {num} is {Factorial(num)}");
             }
         }
-        #endregion
-        #region Q7.
         #endregion
         #region Q8.
         #endregion
