@@ -97,37 +97,58 @@ namespace assignment5
 
 
             //#endregion
-            #region Q4. Function to Sum Digits of a Number
-         class Program
+            //    #region Q4. Function to Sum Digits of a Number
+            // class Program
+            //{
+            //    static int SumDigits(int number)
+            //    {
+            //        int sum = 0;
+            //        while (number != 0)
+            //        {
+            //            sum += number % 10;
+            //            number /= 10;
+            //        }
+            //        return sum;
+            //    }
+
+            //    static void Main()
+            //    {
+            //        Console.Write("Enter a number: ");
+            //        int num = int.Parse(Console.ReadLine());
+
+            //        Console.WriteLine($"The sum of the digits of the number {num} is: {SumDigits(num)}");
+            //    }
+
+
+
+
+
+
+
+
+            //#endregion
+            #region Q5. Function IsPrime
+
+            class Program
         {
-            static int SumDigits(int number)
+            static bool IsPrime(int number)
             {
-                int sum = 0;
-                while (number != 0)
+                if (number <= 1) return false;
+                for (int i = 2; i <= Math.Sqrt(number); i++)
                 {
-                    sum += number % 10;
-                    number /= 10;
+                    if (number % i == 0) return false;
                 }
-                return sum;
+                return true;
             }
 
             static void Main()
             {
                 Console.Write("Enter a number: ");
                 int num = int.Parse(Console.ReadLine());
-
-                Console.WriteLine($"The sum of the digits of the number {num} is: {SumDigits(num)}");
+                Console.WriteLine(IsPrime(num) ? "Prime" : "Not Prime");
             }
-        
+        }
 
-
-
-
-
-
-
-        #endregion
-        #region Q5.
         #endregion
         #region Q6.
         #endregion
@@ -136,5 +157,5 @@ namespace assignment5
         #region Q8.
         #endregion
     }
-    }
+}
 }
